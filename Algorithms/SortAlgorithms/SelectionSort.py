@@ -1,4 +1,4 @@
-class InsertionSort(object):
+class SelectionSort(object):
 
 	def __init__(self):
 		self.set_input(list())
@@ -11,7 +11,7 @@ class InsertionSort(object):
 		self.input_array = input_array
 		self.input_size = len(input_array)
 
-	def insertion_sort(self):
+	def selection_sort(self):
 		for outer_loop_counter in range(0, self.input_size):
 			min_position = outer_loop_counter
 			min = self.input_array[outer_loop_counter]
@@ -28,27 +28,27 @@ class InsertionSort(object):
 		return self.input_array
 
 	def print_output(self):
-		output_array = self.insertion_sort()
+		output_array = self.selection_sort()
 		for output in output_array:
 			print (output, end=' ')
 		print ('')
 
-insertion_sort = InsertionSort()
+selection_sort = SelectionSort()
 
-insertion_sort.set_input([1, 2, 3, 4])
-insertion_sort.print_output()
+selection_sort.set_input([1, 2, 3, 4])
+selection_sort.print_output()
 
-insertion_sort.set_input([1, 2])
-insertion_sort.print_output()
+selection_sort.set_input([1, 2])
+selection_sort.print_output()
 
-insertion_sort.set_input([4, 3, 2, 1])
-insertion_sort.print_output()
+selection_sort.set_input([4, 3, 2, 1])
+selection_sort.print_output()
 
-insertion_sort.set_input([1])
-insertion_sort.print_output()
+selection_sort.set_input([1])
+selection_sort.print_output()
 
-insertion_sort.set_input([])
-insertion_sort.print_output()
+selection_sort.set_input([])
+selection_sort.print_output()
 
-insertion_sort.set_input([10, 10, 4, 10, 9, 1, 2, 5, 6, 100, -100, 10])
-insertion_sort.print_output()
+selection_sort.set_input([10, 10, 4, 10, 9, 1, 2, 5, 6, 100, -100, 10])
+selection_sort.print_output()
