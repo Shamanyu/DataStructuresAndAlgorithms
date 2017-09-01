@@ -13,6 +13,9 @@ class Vertex(object):
   def get_vertex(self):
     return self.name
 
+  def print_vertex(self):
+    print (self.get_vertex())
+
 class Edge(object):
 
   def __init__(self, source_vertex, destination_vertex):
@@ -37,10 +40,13 @@ class Edge(object):
   def get_destination_vertex(self):
     return self.destination_vertex
 
+  def print_edge(self):
+    print(self.source_vertex.get_vertex(), self.destination_vertex.get_vertex())
+
 class Graph(object):
 
   def __init__(self):
-    self.set_input(list(), list())
+    pass
 
   def get_user_input(self):
     vertices = [Vertex(vertex_name) for vertex_name in input.split()]
@@ -95,18 +101,19 @@ class Graph(object):
   def print_graph(self):
     print ("\nVertices are: ")
     for vertex in self.vertices:
-      print (vertex.get_vertex(), end=' ')
+      vertex.print_vertex()
     print ("\nEdges are: ")
     for edge in self.edges:
-      print(edge.get_edge(), end=' ')
-    print("\n")
+      edge.print_edge()
+    print("")
 
 vertex_a = Vertex('a')
 vertex_b = Vertex('b')
 
 edge_1 = Edge(vertex_a, vertex_b)
 edge_2 = Edge(vertex_b, vertex_a)
+edge_3 = Edge(vertex_a, vertex_a)
 
 graph = Graph()
-graph.set_input([vertex_a, vertex_b], [edge_1, edge_2])
+graph.set_input([vertex_a, vertex_b], [edge_1, edge_2, edge_3])
 graph.print_graph()
