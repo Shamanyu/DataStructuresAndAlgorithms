@@ -14,13 +14,10 @@ class Graph(object):
     self.nodes.append(node)
 
   def remove_node(self, node):
-    # import pdb; pdb.set_trace()
     edges_to_remove = list()
-    for edge in self.edges:
+    for edge in self.edges[:]:
       if node == edge.get_source_node() or node == edge.get_destination_node():
-        edges_to_remove.append(edge)
-    for edge in edges_to_remove:
-      self.remove_edge(edge)
+        self.remove_edge(edge)
     try:
       self.nodes.remove(node)
     except:
