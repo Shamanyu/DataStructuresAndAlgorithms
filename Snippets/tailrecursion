@@ -1,0 +1,31 @@
+Nikhil
+butler_path_calc_functions.erl
+finding_intersecting_segment/5
+deadlock_functions.erl
+get_deadlock_free_position/4
+order_manager.erl
+process_order_loop/5
+
+Abhishek
+order_processing_functions.erl
+create_new_compartment_set/3
+find_least_combination/3
+process_items/4
+
+Sanjiban
+process_IFCList_per_item/4
+update_racklist/2
+calculate_select_least_heuristic/5
+
+Laxman
+evaluate_all_neighbours/6
+evaluate_immediate_neighbours/5
+path_calculation_functions.erl
+best_step/4
+
+Shubham
+scan/11							OK
+put_functions.erl
+get_itemquantitydetails_list_from_putdata/4		OK
+get_best_racks_for_splitting/6				OK
+get_best_disjoint_cuboids/2				Not sure

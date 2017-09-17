@@ -1,0 +1,3 @@
+{ok,ButlerInfo}=butler_functions:get_butlerinfo(ReservedButlerId),
+butler_reservation_functions:emergency_reserve(ReservedButlerId,ButlerInfo#butlerinfo.position,ButlerInfo#butlerinfo.direction,down),
+butler_functions:update_navstatus(ReservedButlerId,error),

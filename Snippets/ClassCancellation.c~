@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main()
+{
+	int T, N, K;
+	int enterTime, earlyCount, flag;
+	int counter1, counter2;
+	scanf("%d", &T);
+	for(counter1=0;counter1<T;counter1++)
+	{
+		scanf("%d", &N);
+		scanf("%d", &K);
+		earlyCount = 0;
+		flag=0;
+		for(counter2=0;counter2<N;counter2++)
+		{
+			scanf("%d", &enterTime);
+			if(enterTime <= 0)
+			{
+				earlyCount++;
+				if(earlyCount >= K)
+				{
+					flag=1;
+					break;
+				}
+			}
+		}
+		if(flag)
+		{
+			printf("NO\n");
+		}
+		else
+		{
+			printf("YES\n");
+		}
+	}
+	return 0;
+}

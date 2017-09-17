@@ -1,0 +1,2 @@
+string=raw_input('Enter the C style string:\n')
+print ''.join(list(reversed(string)))                                                                                                                                                                                                                                                                                                                                                                               

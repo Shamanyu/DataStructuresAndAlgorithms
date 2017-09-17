@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int factorial(int num)
+{
+	int res;
+	if(num!=0)
+	{
+		res=num*factorial(num-1);
+		return res;
+	}
+	else
+	{
+		return 1;
+	}
+}
+
+int main()
+{
+	int num,result;
+	printf("\nEnter number:\t");
+	scanf("%d",&num);
+	result=factorial(num);
+	printf("\nHere is the result: %d\n",result);
+	return 0;
+}

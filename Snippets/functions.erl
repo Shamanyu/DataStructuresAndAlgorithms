@@ -1,0 +1,73 @@
+-module(functions).
+-export([extractHead/1,extractThird/1,checkIfSame/1,validTime/1,checkIfUnderage/1,factorial/1,getListLength/1,tail_factorial/1]).
+
+extractHead([H|_])->
+	io:format("This is your head:"),
+	H.
+
+extractThird([_,_,X|_])->
+	X.
+
+checkIfSame([X,X])->
+	io:format("Yay, these are same.");
+checkIfSame([_,_])->
+	io:format("Nooo, not same.").
+
+validTime([Date={D,M,Y},Time={H,Min,S}])->
+	io:format("The date tuple {~p} says today is ~p/~p/~p and~n",[Date,D,M,Y]),
+	io:format("The time tuple {~p} says the time is ~p:~p:~p~n",[Time,H,Min,S]);
+validTime(_)->
+	io:format("~nStop this bullshit.").
+
+%checkIfUnderage({state,Age})->
+%	if(state==Maha)->
+%		if(Age>=25)->
+%			io:format("Go ahead,drink!");
+%		true->
+%			io:format("You can't drink!").;
+%	if(state=Goa)->
+%		if(Age>=18)->
+%			io:format("Go ahead, drink!");
+%		true->
+%			io:format("You can't drink!").;
+%	true->
+%		if(Age>=21)->
+%			io:format("Go ahead, drink!");
+%		true->
+%			io:format("You can't drink!")..
+
+checkIfUnderage({maharashtra,Age}) when Age>=25->
+	io:format("Go ahead,drink!");
+checkIfUnderage({maharashtra,_})->
+	io:format("You can't drink!");
+checkIfUnderage({goa,Age}) when Age>=18->
+	io:format("Go ahead,drink!");
+checkIfUnderage({goa,_})->
+	io:format("You can't drink!");
+checkIfUnderage({_,Age}) when Age>=21->
+	io:format("Go ahead,drink!");
+checkIfUnderage({_,_})->
+	io:format("You can't drink!").
+
+factorial(0)->
+	1;
+factorial(N) when N>0->
+	N*factorial(N-1);
+factorial(_)->
+	io:format("Only whole numbers please, bitch!").
+
+getListLength([])->
+	0;
+getListLength([_])->
+	1;
+getListLength([_|T])->
+	1+getListLength(T);
+getListLength(_)->
+	io:format("Please give a fucking list.").
+
+tail_factorial(N)->tail_factorial(N,1).
+tail_factorial(0,Product)->
+	Product;
+tail_factorial(N,Product)->
+	tail_factorial(N-1,Product*N).
+	

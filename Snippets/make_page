@@ -1,0 +1,14 @@
+#!/bin/bash
+# make_page - A script to produce an HTML file
+
+echo "<HTML>"
+echo "<HEAD>"
+echo " <TITLE>"
+echo " Shubham shamanyu biography"
+echo " </TITLE>"
+echo "</HEAD>"
+echo ""
+echo "<BODY>"
+echo " He likes football"
+echo "</BODY>"
+echo "</HTML>"

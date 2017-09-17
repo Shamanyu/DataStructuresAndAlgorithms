@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define MAX 100
+
+int main()
+{
+	int N, matrix[MAX][MAX], sum;
+	int counter1, counter2, input;
+	scanf("%d",&N);
+	for(counter1=0;counter1<N;counter1++)
+	{
+		for(counter2=0;counter2<N;counter2++)
+		{
+			scanf("%d",&input);
+			if(counter1 == counter2)
+			{
+				sum += input;
+			}
+			if(counter1 + counter2 + 1 == N)
+			{
+				sum -= input;
+			}
+		}
+	}
+	printf("%d",sum);
+	return 0;
+}

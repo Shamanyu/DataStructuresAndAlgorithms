@@ -1,0 +1,216 @@
+2015-06-15 10:15:03.332 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,abandon_subtask,abandon_subtask,[]}
+2015-06-15 10:15:03.332 [info] <0.615.0>@butler_manager:handle_info:1767 Trying to abandon current subtask
+2015-06-15 10:15:03.333 [info] <0.614.0>@butler_navigator:handle_event:1101 Navigator abandoning current move for Butler #1,
+                State is waiting_for_goto_barcode,
+                ReqList is []
+2015-06-15 10:15:03.333 [info] <0.615.0>@butler_manager:handle_info:2211 Unhandled info {abandoning_current_move}
+2015-06-15 10:15:03.333 [info] <0.614.0>@butler_navigator:handle_event:1106 Sending abandoned notification to : {butler,1}
+2015-06-15 10:15:03.333 [debug] <0.614.0>@butler_reservation_functions:clear_all_safety_reservations:1186 Clearing previous safety reservations for Butler #1
+2015-06-15 10:15:03.334 [info] <0.615.0>@butler_manager:handle_info:1899 Got butler move abandon notification: 1
+2015-06-15 10:15:03.335 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,start_task_after_abandon,start_task_after_abandon,[{movetask,<<"84439aa4-3996-4d67-a369-9d1b7d1a1cab">>}]}
+2015-06-15 10:15:03.336 [debug] <0.615.0>@butler_manager:handle_info:928 Processing task id: {movetask,<<"84439aa4-3996-4d67-a369-9d1b7d1a1cab">>}
+2015-06-15 10:15:03.339 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,goto_barcode,goto_barcode,[{{"003.024",0},undefined},[{lock_timing,no_lock_turn}]]}
+2015-06-15 10:15:03.340 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,goto_barcode,goto_barcode,[{{"003.024",0},undefined},[{lock_timing,no_lock_turn}],{charger_check_required,false}]}
+2015-06-15 10:15:03.340 [info] <0.614.0>@butler_navigator:waiting_for_goto_barcode:203 Butler 1 going to "003.024", 0 with Rack Final Direction undefined
+2015-06-15 10:15:03.340 [debug] <0.614.0>@butler_navigator:waiting_for_goto_barcode:264 PathOptions : [{chargestep,no}] 
+2015-06-15 10:15:03.340 [debug] <0.614.0>@butler_navigator:waiting_for_goto_barcode:292 Source: {{25,2}, 0}, Destination: {{24,3}, 0} LiftState: down
+2015-06-15 10:15:03.340 [debug] <0.2234.0>@path_calculation_functions:path_calculator:72 Inside path calculator
+2015-06-15 10:15:03.340 [debug] <0.2234.0>@path_calculation_functions:astar:124 Inside astar
+2015-06-15 10:15:03.347 [debug] <0.614.0>@deadlock_functions:mark_path_in_map:513 Path : [{{24,3},2},{{24,2},2},{{24,2},1},{{25,2},1}] marked for butler id : 1
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:waiting_for_path:392 Path calculated With Direction = [{{25,2},1},{{24,2},1},{{24,2},2},{{24,3},2}]
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:waiting_for_path:419 RackFinalDirection : undefined , RackDirection : undefined , BotDestinationDirection : 0 , BotCurrentDirection : 0
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:waiting_for_path:421 HardTurnLocation : [{24,2},{25,2}] , RotatableLift : off , LockTiming : no_lock_turn , OptionsList : [{chargestep,no}]
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:waiting_for_path:470 Number Of Turns : 2 , AngleDifference : 0
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:handle_event:1041 Got reservation availability info {reserve_and_send,0}
+2015-06-15 10:15:03.350 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:512 The ReqList is : []
+2015-06-15 10:15:03.351 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:616 Path Stored is [[{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0},{{24,3},0}]], completion barcode is undefined, notify entity is {butler,1}, destination is {{"003.024",0},undefined}
+2015-06-15 10:15:03.351 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:684 Butler#1 : RemainingPath : [{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0},{{24,3},0}]
+2015-06-15 10:15:03.351 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:685 To Be Res [{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0}] and Next are [{{24,2},0},{{24,3},0}] 
+2015-06-15 10:15:03.351 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:686 Before Intersecting Segment Calculation The DirectionPath is [{{25,2},1},{{24,2},1},{{24,2},2},{{24,3},2}] , PrevSegEnd is undefined , PrevIntSeg Remaining to be Completed : []
+2015-06-15 10:15:03.351 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{25,2},1}] ToBeResSeg : [{{25,2},1}], PrevSegEnd : undefined
+2015-06-15 10:15:03.352 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,2},1}] ToBeResSeg : [{{24,2},1}], PrevSegEnd : {{25,2},1}
+2015-06-15 10:15:03.352 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,2},0}] ToBeResSeg : [{{24,2},0}], PrevSegEnd : {{24,2},1}
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:692 After Intersecting Segment Calculation The Intersecting Segments for this Segments is : [{[{{25,2},1}],[{{25,2},1}]},{[{{24,2},1}],[{{24,2},1}]},{[{{24,2},0}],[{{24,2},2}]}]
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:693 The DirectionPath is : [{{24,3},2}] , IntSegEnd : {{24,2},2} 
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2238 Trying to reserve: [{{25,2},1},{{24,2},1},{{24,2},0}] 
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2239 Direction  : 0, LiftState : down, NoOfTurns : 2, AngleDifference : 0
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2241 OptionsList : [{chargestep,no}]
+2015-06-15 10:15:03.353 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2242 Hard Turn Positions : [{24,2},{25,2}]
+2015-06-15 10:15:03.358 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2249 Reservation successful
+2015-06-15 10:15:03.359 [debug] <0.614.0>@butler_navigator:generating_steplists:2451 Steps list: [{{lockstate,on},{1,1,["001.024","001.025"],[1220]}},{{lockstate,on},{0,0,["001.024"],[]}}]
+2015-06-15 10:15:03.359 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {1,1,["001.024","001.025"],[1220],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:15:03.359 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {0,0,["001.024"],[],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:15:03.360 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2257 LastPoint : {{24,2},0} , NoOfTurnLeft : 0 , NewAngleDifference : 0 , DirectionAfterStepList : 0 
+2015-06-15 10:15:03.360 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2259 NewHardTurn Positions : []
+2015-06-15 10:15:03.360 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2263 Completion Barcode: {"001.024",0}
+2015-06-15 10:15:06.367 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,1},{lock_state,on},{lift_state,down},{bottom_barcode,"001.025"},{bottom_direction,1},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:15:06.368 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.025, direction = 1, completion = {"001.024",0} CurrentMovingDirection = 1, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:15:06.369 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:15:06.369 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type moving_or_idle
+2015-06-15 10:15:06.371 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type safety
+2015-06-15 10:15:06.373 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {25,2}  with direction 1 is : [{{25,2},1},{{24,2},1},{{24,2},2}]
+2015-06-15 10:15:06.377 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : [{24,2}]
+2015-06-15 10:15:06.377 [debug] <0.614.0>@butler_navigator:handle_event:1041 Got reservation availability info {reserve_and_send,0}
+2015-06-15 10:15:06.377 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:512 The ReqList is : []
+2015-06-15 10:15:06.377 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:616 Path Stored is [[{{24,2},0},{{24,3},0}]], completion barcode is {"001.024",0}, notify entity is {butler,1}, destination is {{"003.024",0},undefined}
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:684 Butler#1 : RemainingPath : [{{24,2},0},{{24,3},0}]
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:685 To Be Res [{{24,2},0},{{24,3},0}] and Next are [] 
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:686 Before Intersecting Segment Calculation The DirectionPath is [{{24,3},2}] , PrevSegEnd is {{24,2},2} , PrevIntSeg Remaining to be Completed : [{{25,2},1},{{24,2},1},{{24,2},2}]
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,3},0}] ToBeResSeg : [{{24,3},0}], PrevSegEnd : {{24,2},2}
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:692 After Intersecting Segment Calculation The Intersecting Segments for this Segments is : [{[{{24,3},0}],[{{24,3},2}]}]
+2015-06-15 10:15:06.378 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:693 The DirectionPath is : [] , IntSegEnd : {{24,3},2} 
+2015-06-15 10:15:06.379 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2238 Trying to reserve: [{{24,3},0}] 
+2015-06-15 10:15:06.379 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2239 Direction  : 0, LiftState : down, NoOfTurns : 0, AngleDifference : 0
+2015-06-15 10:15:06.379 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2241 OptionsList : [{chargestep,no}]
+2015-06-15 10:15:06.379 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2242 Hard Turn Positions : []
+2015-06-15 10:15:06.380 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2249 Reservation successful
+2015-06-15 10:15:06.381 [debug] <0.614.0>@butler_navigator:generating_steplists:2451 Steps list: [{{lockstate,on},{2,1,["003.024","001.024"],[1360]}}]
+2015-06-15 10:15:06.381 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {2,1,["003.024","001.024"],[1360],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:15:06.381 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2257 LastPoint : {{24,3},0} , NoOfTurnLeft : 0 , NewAngleDifference : 0 , DirectionAfterStepList : 2 
+2015-06-15 10:15:06.381 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2259 NewHardTurn Positions : []
+2015-06-15 10:15:06.381 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2263 Completion Barcode: {"003.024",0}
+2015-06-15 10:15:08.923 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,1},{lock_state,on},{lift_state,down},{bottom_barcode,"001.024"},{bottom_direction,1},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:15:08.924 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.024, direction = 1, completion = {"003.024",0} CurrentMovingDirection = 1, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:15:08.925 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:15:08.926 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type moving_or_idle
+2015-06-15 10:15:08.927 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type safety
+2015-06-15 10:15:08.929 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {24,2}  with direction 1 is : [{{24,2},1},{{24,2},2},{{24,3},2}]
+2015-06-15 10:15:08.932 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : [{24,2}]
+2015-06-15 10:15:09.861 [info] <0.1765.0>@butler_communicator:handle_info:153 Connection closed in tcp
+2015-06-15 10:15:09.862 [warning] <0.615.0>@butler_manager:handle_info:805 Communicator disconnected for butler 1
+
+hey: butler will get an error message now
+
+2015-06-15 10:17:06.125 [warning] <0.614.0>@butler_navigator:handle_event:2001 Got error packet from 1, error = [72,101,121], barcode = 001.024, direction = 0
+2015-06-15 10:17:06.126 [debug] <0.614.0>@butler_reservation_functions:clear_all_safety_reservations:1186 Clearing previous safety reservations for Butler #1
+2015-06-15 10:17:06.127 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type safety
+2015-06-15 10:17:06.128 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type safety
+2015-06-15 10:17:06.130 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,3}, of type safety
+2015-06-15 10:17:06.135 [warning] <0.614.0>@butler_reservation_functions:emergency_reserve:68 Butler 1 Emergency. Reserving ["001.024","003.024","001.023","003.023"]
+2015-06-15 10:17:06.135 [debug] <0.614.0>@butler_reservation_functions:change_reservation_status_exclusive:352 Changing reservation for butler 1, at {24,2}, to type idle
+2015-06-15 10:17:06.136 [debug] <0.614.0>@butler_reservation_functions:change_reservation_status_exclusive:352 Changing reservation for butler 1, at {24,3}, to type idle
+2015-06-15 10:17:06.140 [info] <0.614.0>@butler_navigator:handle_event:2040 Remaining Barcodes = []
+
+
+hey: butler will be started again now
+
+
+2015-06-15 10:18:06.960 [warning] <0.615.0>@butler_manager:handle_info:815 Communicator connected for butler 1
+2015-06-15 10:18:06.963 [debug] <0.614.0>@butler_navigator:handle_event:1149 Received StepPacket = [{bottom_barcode,"001.025"},{bottom_direction,0},{lift_state,down},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,init},{workflow_status,ready},{lock_state,off},{rotatable_lift,off}]
+2015-06-15 10:18:06.963 [info] <0.614.0>@butler_navigator:handle_event:1153 Got init packet from 1, barcode = 001.025, direction = 0, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:06.974 [debug] <0.614.0>@butler_reservation_functions:clear_butler_reservations_except:948 Clearing previous reservations for Butler #1
+2015-06-15 10:18:06.975 [info] <0.614.0>@butler_reservation_functions:clear_position_all_exclusive:552 Clearing position for butler 1, at {23,2}, of type all except []
+2015-06-15 10:18:06.975 [info] <0.614.0>@butler_reservation_functions:clear_position_all_exclusive:552 Clearing position for butler 1, at {23,3}, of type all except []
+2015-06-15 10:18:06.976 [info] <0.614.0>@butler_reservation_functions:clear_position_all_exclusive:552 Clearing position for butler 1, at {24,2}, of type all except []
+2015-06-15 10:18:06.977 [info] <0.614.0>@butler_reservation_functions:clear_position_all_exclusive:552 Clearing position for butler 1, at {24,3}, of type all except []
+2015-06-15 10:18:06.980 [debug] <0.614.0>@butler_reservation_functions:change_reservation_status:333 Changing reservation for butler 1, at {25,2}, to type idle
+2015-06-15 10:18:06.980 [debug] <0.614.0>@butler_reservation_functions:change_reservation_status_exclusive:352 Changing reservation for butler 1, at {25,2}, to type idle
+2015-06-15 10:18:06.981 [debug] <0.614.0>@butler_navigator:handle_event:1301 Lifted Rack undefined 
+2015-06-15 10:18:06.981 [warning] <0.615.0>@butler_manager:handle_cast:540 Got init in middle of a task
+2015-06-15 10:18:06.983 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,abandon_subtask,abandon_subtask,[]}
+2015-06-15 10:18:06.983 [info] <0.615.0>@butler_manager:handle_info:1767 Trying to abandon current subtask
+2015-06-15 10:18:06.985 [info] <0.614.0>@butler_navigator:handle_event:1101 Navigator abandoning current move for Butler #1,
+                State is waiting_for_goto_barcode,
+                ReqList is []
+2015-06-15 10:18:06.985 [info] <0.615.0>@butler_manager:handle_info:2211 Unhandled info {abandoning_current_move}
+2015-06-15 10:18:06.985 [info] <0.614.0>@butler_navigator:handle_event:1106 Sending abandoned notification to : {butler,1}
+2015-06-15 10:18:06.985 [debug] <0.614.0>@butler_reservation_functions:clear_all_safety_reservations:1186 Clearing previous safety reservations for Butler #1
+2015-06-15 10:18:06.986 [info] <0.615.0>@butler_manager:handle_info:1899 Got butler move abandon notification: 1
+2015-06-15 10:18:06.987 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,start_task_after_abandon,start_task_after_abandon,[{movetask,<<"84439aa4-3996-4d67-a369-9d1b7d1a1cab">>}]}
+2015-06-15 10:18:06.988 [debug] <0.615.0>@butler_manager:handle_info:928 Processing task id: {movetask,<<"84439aa4-3996-4d67-a369-9d1b7d1a1cab">>}
+2015-06-15 10:18:06.992 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,goto_barcode,goto_barcode,[{{"003.024",0},undefined},[{lock_timing,no_lock_turn}]]}
+2015-06-15 10:18:06.993 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,goto_barcode,goto_barcode,[{{"003.024",0},undefined},[{lock_timing,no_lock_turn}],{charger_check_required,false}]}
+2015-06-15 10:18:06.993 [info] <0.614.0>@butler_navigator:waiting_for_goto_barcode:203 Butler 1 going to "003.024", 0 with Rack Final Direction undefined
+2015-06-15 10:18:06.993 [debug] <0.614.0>@butler_navigator:waiting_for_goto_barcode:264 PathOptions : [{chargestep,no}] 
+2015-06-15 10:18:06.994 [debug] <0.614.0>@butler_navigator:waiting_for_goto_barcode:292 Source: {{25,2}, 0}, Destination: {{24,3}, 0} LiftState: down
+2015-06-15 10:18:06.994 [debug] <0.2349.0>@path_calculation_functions:path_calculator:72 Inside path calculator
+2015-06-15 10:18:06.994 [debug] <0.2349.0>@path_calculation_functions:astar:124 Inside astar
+2015-06-15 10:18:07.000 [debug] <0.614.0>@deadlock_functions:mark_path_in_map:513 Path : [{{24,3},2},{{24,2},2},{{24,2},1},{{25,2},1}] marked for butler id : 1
+2015-06-15 10:18:07.001 [debug] <0.614.0>@butler_navigator:waiting_for_path:392 Path calculated With Direction = [{{25,2},1},{{24,2},1},{{24,2},2},{{24,3},2}]
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_path:419 RackFinalDirection : undefined , RackDirection : undefined , BotDestinationDirection : 0 , BotCurrentDirection : 0
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_path:421 HardTurnLocation : [{24,2},{25,2}] , RotatableLift : off , LockTiming : no_lock_turn , OptionsList : [{chargestep,no}]
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_path:470 Number Of Turns : 2 , AngleDifference : 0
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:handle_event:1041 Got reservation availability info {reserve_and_send,0}
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:512 The ReqList is : []
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:616 Path Stored is [[{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0},{{24,3},0}]], completion barcode is undefined, notify entity is {butler,1}, destination is {{"003.024",0},undefined}
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:684 Butler#1 : RemainingPath : [{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0},{{24,3},0}]
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:685 To Be Res [{{25,2},0},{{25,2},1},{{24,2},1},{{24,2},0}] and Next are [{{24,2},0},{{24,3},0}] 
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:686 Before Intersecting Segment Calculation The DirectionPath is [{{25,2},1},{{24,2},1},{{24,2},2},{{24,3},2}] , PrevSegEnd is undefined , PrevIntSeg Remaining to be Completed : []
+2015-06-15 10:18:07.002 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{25,2},1}] ToBeResSeg : [{{25,2},1}], PrevSegEnd : undefined
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,2},1}] ToBeResSeg : [{{24,2},1}], PrevSegEnd : {{25,2},1}
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,2},0}] ToBeResSeg : [{{24,2},0}], PrevSegEnd : {{24,2},1}
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:692 After Intersecting Segment Calculation The Intersecting Segments for this Segments is : [{[{{25,2},1}],[{{25,2},1}]},{[{{24,2},1}],[{{24,2},1}]},{[{{24,2},0}],[{{24,2},2}]}]
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:693 The DirectionPath is : [{{24,3},2}] , IntSegEnd : {{24,2},2} 
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2238 Trying to reserve: [{{25,2},1},{{24,2},1},{{24,2},0}] 
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2239 Direction  : 0, LiftState : down, NoOfTurns : 2, AngleDifference : 0
+2015-06-15 10:18:07.003 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2241 OptionsList : [{chargestep,no}]
+2015-06-15 10:18:07.004 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2242 Hard Turn Positions : [{24,2},{25,2}]
+2015-06-15 10:18:07.007 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2249 Reservation successful
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:generating_steplists:2451 Steps list: [{{lockstate,on},{1,1,["001.024","001.025"],[1220]}},{{lockstate,on},{0,0,["001.024"],[]}}]
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {1,1,["001.024","001.025"],[1220],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {0,0,["001.024"],[],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2257 LastPoint : {{24,2},0} , NoOfTurnLeft : 0 , NewAngleDifference : 0 , DirectionAfterStepList : 0 
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2259 NewHardTurn Positions : []
+2015-06-15 10:18:07.008 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2263 Completion Barcode: {"001.024",0}
+2015-06-15 10:18:10.014 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,1},{lock_state,on},{lift_state,down},{bottom_barcode,"001.025"},{bottom_direction,1},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:18:10.015 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.025, direction = 1, completion = {"001.024",0} CurrentMovingDirection = 1, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:10.015 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:18:10.016 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type moving_or_idle
+2015-06-15 10:18:10.017 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type safety
+2015-06-15 10:18:10.020 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {25,2}  with direction 1 is : [{{25,2},1},{{24,2},1},{{24,2},2}]
+2015-06-15 10:18:10.023 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : [{24,2}]
+2015-06-15 10:18:10.023 [debug] <0.614.0>@butler_navigator:handle_event:1041 Got reservation availability info {reserve_and_send,0}
+2015-06-15 10:18:10.024 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:512 The ReqList is : []
+2015-06-15 10:18:10.024 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:616 Path Stored is [[{{24,2},0},{{24,3},0}]], completion barcode is {"001.024",0}, notify entity is {butler,1}, destination is {{"003.024",0},undefined}
+2015-06-15 10:18:10.024 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:684 Butler#1 : RemainingPath : [{{24,2},0},{{24,3},0}]
+2015-06-15 10:18:10.024 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:685 To Be Res [{{24,2},0},{{24,3},0}] and Next are [] 
+2015-06-15 10:18:10.024 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:686 Before Intersecting Segment Calculation The DirectionPath is [{{24,3},2}] , PrevSegEnd is {{24,2},2} , PrevIntSeg Remaining to be Completed : [{{25,2},1},{{24,2},1},{{24,2},2}]
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_path_calc_functions:get_intersecting_segments:193 Segment : [{{24,3},0}] ToBeResSeg : [{{24,3},0}], PrevSegEnd : {{24,2},2}
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:692 After Intersecting Segment Calculation The Intersecting Segments for this Segments is : [{[{{24,3},0}],[{{24,3},2}]}]
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:693 The DirectionPath is : [] , IntSegEnd : {{24,3},2} 
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2238 Trying to reserve: [{{24,3},0}] 
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2239 Direction  : 0, LiftState : down, NoOfTurns : 0, AngleDifference : 0
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2241 OptionsList : [{chargestep,no}]
+2015-06-15 10:18:10.025 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2242 Hard Turn Positions : []
+2015-06-15 10:18:10.026 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2249 Reservation successful
+2015-06-15 10:18:10.027 [debug] <0.614.0>@butler_navigator:generating_steplists:2451 Steps list: [{{lockstate,on},{2,1,["003.024","001.024"],[1360]}}]
+2015-06-15 10:18:10.027 [debug] <0.614.0>@butler_navigator:generating_steplists:2477 Move Command Sent to remote : {2,1,["003.024","001.024"],[1360],[{lockstate,on},{chargestep,no}]} 
+2015-06-15 10:18:10.027 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2257 LastPoint : {{24,3},0} , NoOfTurnLeft : 0 , NewAngleDifference : 0 , DirectionAfterStepList : 2 
+2015-06-15 10:18:10.027 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2259 NewHardTurn Positions : []
+2015-06-15 10:18:10.027 [debug] <0.614.0>@butler_navigator:try_segment_reservation:2263 Completion Barcode: {"003.024",0}
+2015-06-15 10:18:12.570 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,1},{lock_state,on},{lift_state,down},{bottom_barcode,"001.024"},{bottom_direction,1},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:18:12.572 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.024, direction = 1, completion = {"003.024",0} CurrentMovingDirection = 1, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:12.573 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:18:12.573 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type moving_or_idle
+2015-06-15 10:18:12.575 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {25,2}, of type safety
+2015-06-15 10:18:12.576 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {24,2}  with direction 1 is : [{{24,2},1},{{24,2},2},{{24,3},2}]
+2015-06-15 10:18:12.580 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : [{24,2}]
+2015-06-15 10:18:15.575 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,0},{lock_state,on},{lift_state,down},{bottom_barcode,"001.024"},{bottom_direction,0},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:18:15.576 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.024, direction = 0, completion = {"003.024",0} CurrentMovingDirection = 0, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:15.577 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:18:15.577 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type moving_or_idle
+2015-06-15 10:18:15.579 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type safety
+2015-06-15 10:18:15.581 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {24,2}  with direction 0 is : [{{24,2},2},{{24,3},2}]
+2015-06-15 10:18:15.583 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : []
+2015-06-15 10:18:15.583 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,2},{lock_state,on},{lift_state,down},{bottom_barcode,"001.024"},{bottom_direction,0},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:18:15.583 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 001.024, direction = 0, completion = {"003.024",0} CurrentMovingDirection = 2, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:15.584 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:18:15.584 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {24,2}  with direction 0 is : [{{24,2},2},{{24,3},2}]
+2015-06-15 10:18:15.585 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : []
+2015-06-15 10:18:18.133 [debug] <0.614.0>@butler_navigator:handle_event:1332 Received StepPacket = [{moving_direction,2},{lock_state,on},{lift_state,down},{bottom_barcode,"003.024"},{bottom_direction,0},{workflow_status,moving},{bottom_values,{0,0,0}},{top_barcode,[]},{top_direction,undefined},{top_values,{0,0,0}},{reason,status}]
+2015-06-15 10:18:18.134 [debug] <0.614.0>@butler_navigator:handle_event:1382 Got info packet from 1, barcode = 003.024, direction = 0, completion = {"003.024",0} CurrentMovingDirection = 2, LockState = on, LiftedRack = undefined, LiftDirection = 0, RackDirectionInfo = notfound
+2015-06-15 10:18:18.135 [debug] <0.614.0>@butler_navigator:handle_event:1566 Lifted Rack undefined 
+2015-06-15 10:18:18.135 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type moving_or_idle
+2015-06-15 10:18:18.137 [debug] <0.614.0>@butler_reservation_functions:clear_position_exclusive:447 Clearing position for butler 1, at {24,2}, of type safety
+2015-06-15 10:18:18.138 [debug] <0.614.0>@butler_navigator:handle_event:1738 The New Intersecting Segment after receiving info packet for {24,3}  with direction 0 is : [{{24,3},2}]
+2015-06-15 10:18:18.140 [debug] <0.614.0>@butler_navigator:handle_event:1741 New Safety Turn Res : []
+2015-06-15 10:18:18.140 [debug] <0.614.0>@butler_navigator:handle_event:1770 Completion barcode reached, StateName = waiting_for_reserve_and_send
+2015-06-15 10:18:18.140 [debug] <0.614.0>@butler_navigator:handle_event:1041 Got reservation availability info {reserve_and_send,0}
+2015-06-15 10:18:18.140 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:512 The ReqList is : []
+2015-06-15 10:18:18.141 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:616 Path Stored is [], completion barcode is undefined, notify entity is {butler,1}, destination is {{"003.024",0},undefined}
+2015-06-15 10:18:18.141 [debug] <0.614.0>@butler_navigator:waiting_for_reserve_and_send:659 Reached final destination
+2015-06-15 10:18:18.141 [debug] <0.615.0>@butler_manager:handle_info:1846 Got butler move complete notification: 1
+2015-06-15 10:18:18.142 [debug] <0.615.0>@butler_manager:handle_info:1324 The Current SubTask is : {subtask,set_task_complete,set_task_complete,[{movetask,<<"84439aa4-3996-4d67-a369-9d1b7d1a1cab">>}]}
+2015-06-15 10:18:18.143 [debug] <0.615.0>@butler_reservation_functions:change_reservation_status:333 Changing reservation for butler 1, at {24,3}, to type idle
+2015-06-15 10:18:18.143 [debug] <0.615.0>@butler_reservation_functions:change_reservation_status_exclusive:352 Changing reservation for butler 1, at {24,3}, to type idle
+2015-06-15 10:18:18.144 [info] <0.615.0>@butler_manager:handle_info:1310 Butler 1 ready for work.

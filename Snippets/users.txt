@@ -1,0 +1,127 @@
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2016-03-11 09:44 IST
+Nmap scan report for gorfirewall.gorlocal.com (192.168.1.1)
+Host is up (0.00032s latency).
+Nmap scan report for Mi4i-Ashwani.gorlocal.com (192.168.1.13)
+Host is up (0.033s latency).
+Nmap scan report for android-864a03c233dc2faa.gorlocal.com (192.168.1.15)
+Host is up (0.085s latency).
+Nmap scan report for android-420b9850c94af5f6.gorlocal.com (192.168.1.17)
+Host is up (0.0084s latency).
+Nmap scan report for idrac-11VM6C2.gorlocal.com (192.168.1.19)
+Host is up (0.00083s latency).
+Nmap scan report for singapore.localdomain.gorlocal.com (192.168.1.32)
+Host is up (0.0012s latency).
+Nmap scan report for 50-sim-02.gorlocal.com (192.168.1.34)
+Host is up (0.0016s latency).
+Nmap scan report for android-49618b956cb7e82b.gorlocal.com (192.168.1.37)
+Host is up (0.063s latency).
+Nmap scan report for android-b263c8c434d514dc.gorlocal.com (192.168.1.38)
+Host is up (0.12s latency).
+Nmap scan report for android-e65db6c490eba945.gorlocal.com (192.168.1.39)
+Host is up (0.028s latency).
+Nmap scan report for Binola-testing.localdomain.gorlocal.com (192.168.1.40)
+Host is up (0.0014s latency).
+Nmap scan report for android-4b10c2bc0d51356b.gorlocal.com (192.168.1.43)
+Host is up (0.0049s latency).
+Nmap scan report for aman2.localdomain.gorlocal.com (192.168.1.44)
+Host is up (0.00073s latency).
+Nmap scan report for android-d32994d79a04e2ed.gorlocal.com (192.168.1.46)
+Host is up (0.0037s latency).
+Nmap scan report for android-e01db2cda54b4224.gorlocal.com (192.168.1.48)
+Host is up (0.039s latency).
+Nmap scan report for android-b553c776c5563996.gorlocal.com (192.168.1.52)
+Host is up (0.080s latency).
+Nmap scan report for Rubix.localdomain.gorlocal.com (192.168.1.56)
+Host is up (0.0020s latency).
+Nmap scan report for lnf.localdomain.gorlocal.com (192.168.1.60)
+Host is up (0.0013s latency).
+Nmap scan report for android-caddab8d84a8b6ea.gorlocal.com (192.168.1.64)
+Host is up (0.0089s latency).
+Nmap scan report for gor.localdomain.gorlocal.com (192.168.1.71)
+Host is up (0.00092s latency).
+Nmap scan report for ankit-vm.gorlocal.com (192.168.1.74)
+Host is up (0.00094s latency).
+Nmap scan report for GOR-TEST-Server.gorlocal.com (192.168.1.90)
+Host is up (0.00062s latency).
+Nmap scan report for aman1.localdomain.gorlocal.com (192.168.1.92)
+Host is up (0.00071s latency).
+Nmap scan report for 192.168.1.96
+Host is up (0.033s latency).
+Nmap scan report for android-9e7bea53876845bd.gorlocal.com (192.168.1.106)
+Host is up (0.098s latency).
+Nmap scan report for 192.168.1.110
+Host is up (0.11s latency).
+Nmap scan report for android-40ee40346c367672.gorlocal.com (192.168.1.112)
+Host is up (0.20s latency).
+Nmap scan report for Mi4i-MiPhone.gorlocal.com (192.168.1.114)
+Host is up (0.042s latency).
+Nmap scan report for android-29610df5aff51dbf.gorlocal.com (192.168.1.122)
+Host is up (0.31s latency).
+Nmap scan report for kashp-01.gorlocal.com (192.168.1.123)
+Host is up (0.0011s latency).
+Nmap scan report for 192.168.1.126
+Host is up (0.00012s latency).
+Nmap scan report for GOR-Sam.gorlocal.com (192.168.1.128)
+Host is up (0.0079s latency).
+Nmap scan report for Varundevs-iMac.gorlocal.com (192.168.1.132)
+Host is up (0.00080s latency).
+Nmap scan report for android-b34007b8e2525fb2.gorlocal.com (192.168.1.133)
+Host is up (0.022s latency).
+Nmap scan report for 192.168.1.143
+Host is up (0.0023s latency).
+Nmap scan report for mayank.gorlocal.com (192.168.1.144)
+Host is up (0.00045s latency).
+Nmap scan report for android-8a718e922a309342.gorlocal.com (192.168.1.156)
+Host is up (0.14s latency).
+Nmap scan report for debian-base.localdomain.gorlocal.com (192.168.1.159)
+Host is up (0.00100s latency).
+Nmap scan report for Anuraag-POps.gorlocal.com (192.168.1.161)
+Host is up (0.047s latency).
+Nmap scan report for iR3230.gorlocal.com (192.168.1.162)
+Host is up (0.00098s latency).
+Nmap scan report for f7.gorlocal.com (192.168.1.167)
+Host is up (0.00071s latency).
+Nmap scan report for nas.gorlocal.com (192.168.1.169)
+Host is up (0.00066s latency).
+Nmap scan report for 192.168.1.173
+Host is up (0.00058s latency).
+Nmap scan report for shikha-QA.gorlocal.com (192.168.1.179)
+Host is up (0.00039s latency).
+Nmap scan report for gor-Lenovo-B40-70.gorlocal.com (192.168.1.181)
+Host is up (0.016s latency).
+Nmap scan report for android-7e005109b042088.gorlocal.com (192.168.1.183)
+Host is up (0.027s latency).
+Nmap scan report for 192.168.1.186
+Host is up (0.0029s latency).
+Nmap scan report for 192.168.1.187
+Host is up (0.00010s latency).
+Nmap scan report for 192.168.1.200
+Host is up (0.027s latency).
+Nmap scan report for 192.168.1.204
+Host is up (0.0021s latency).
+Nmap scan report for ovirt.gorlocal.com (192.168.1.205)
+Host is up (0.0011s latency).
+Nmap scan report for bigbang.gorlocal.com (192.168.1.206)
+Host is up (0.00054s latency).
+Nmap scan report for 192.168.1.211
+Host is up (0.0017s latency).
+Nmap scan report for 192.168.1.213
+Host is up (0.0016s latency).
+Nmap scan report for idrac-vhost-01.gorlocal.com (192.168.1.214)
+Host is up (0.00071s latency).
+Nmap scan report for idrac-vhost-02.gorlocal.com (192.168.1.215)
+Host is up (0.00062s latency).
+Nmap scan report for 192.168.1.219
+Host is up (0.11s latency).
+Nmap scan report for naveens-iMac.gorlocal.com (192.168.1.220)
+Host is up (0.046s latency).
+Nmap scan report for audit.localdomain.gorlocal.com (192.168.1.221)
+Host is up (0.00095s latency).
+Nmap scan report for eiz.gorlocal.com (192.168.1.241)
+Host is up (0.073s latency).
+Nmap scan report for 192.168.1.250
+Host is up (0.00082s latency).
+Nmap scan report for 192.168.1.251
+Host is up (0.00064s latency).
+Nmap done: 256 IP addresses (62 hosts up) scanned in 23.95 seconds

@@ -1,0 +1,56 @@
+-spec delete_put_for_ppsbin(pps_id(),ppsbin_id()) -> ok.
+delete_put_for_ppsbin(PPSIdRemove,PpsBinIdRemove) ->
+    Keys = put_functions:get_all_put_keys(),
+    PutDataList = 
+        lists:map(
+            fun(Key) ->
+                get_put_output(Key)
+            end,
+            Keys),
+    lists:foreach(
+            fun(PutData) ->
+                case PutData#put_output.scan_status of
+                    scan_pending ->
+                        ok;
+                    {scanned, {PPSId,PpsBinId,_Atom}} ->
+                        if
+                            PPSIdRemove =:= PPSId andalso PpsBinIdRemove =:= PpsBinId ->
+                                case PutData#put_output.status of
+                                    completed ->
+                                        ok;
+                                    calculation_pending ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok; 
+                                    calculating ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok; 
+                                    calculated ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok
+                                end;
+                            true ->
+                                ok
+                        end;
+                    {completed, {PPSId,PpsBinId,_Atom}} ->
+                        if
+                            PPSIdRemove =:= PPSId andalso PpsBinIdRemove =:= PpsBinId ->
+                                case PutData#put_output.status of
+                                    completed ->
+                                        ok;
+                                    calculation_pending ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok; 
+                                    calculating ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok; 
+                                    calculated ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok
+                                end;
+                            true ->
+                                ok
+                        end
+                end
+            end,
+            PutDataList
+            ).

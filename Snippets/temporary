@@ -1,0 +1,14 @@
+ """NewPpstaskRec = Ppstaskrec#ppstaskrec{ppsbin_orders =
+                    lists:dropwhile(
+                      fun(Element) ->
+                        lager:warning("At point 2"),
+                        if 
+                          Element#ppsbinorderrec.ppsbin =:= PpsBinId ->
+                            true;
+                          true ->
+                            false
+                        end,
+                      lager:warning("At point 3")
+                      end,
+                      Ppstaskrec#ppstaskrec.ppsbin_orders
+                    )},"""

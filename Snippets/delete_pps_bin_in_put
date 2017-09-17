@@ -1,0 +1,38 @@
+-spec delete_put_for_ppsbin(pps_id(),ppsbin_id()) -> ok.
+delete_put_for_ppsbin(PPSIdRemove,PpsBinIdRemove) ->
+    Keys = put_functions:get_all_put_keys(),
+    PutDataList = 
+        lists:map(
+            fun(Key) ->
+                get_put_output(Key)
+            end,
+            Keys),
+    lists:foreach(
+            fun(PutData) ->
+                if
+                    is_tuple(not PutData#put_output.scan_status) andalso PutData#put_output.scan_status =:= scan_pending ->
+                        ok;
+                    is_tuple(PutData#put_output.scan_status) 
+                        andalso (element(1,PutData#put_output.scan_status) =:= completed orelse element(1,PutData#put_output.scan_status) =:= scanned) ->
+                        PPSId = element(1,element(2,PutData#put_output.scan_status)),
+                        PpsBinId = element(2,element(2,PutData#put_output.scan_status)),
+                        if
+                            PPSIdRemove =:= PPSId andalso PpsBinIdRemove =:= PpsBinId ->
+                                if
+                                    PutData#put_output.status =:= calculation_pending orelse PutData#put_output.status =:= calculating orelse PutData#put_output.status =:= calculated ->
+                                        delete_put_key(PutData#put_output.put_output_key),
+                                        ok; 
+                                    PutData#put_output.status =:= completed  ->
+                                        ok;
+                                    true ->
+                                        ok
+                                end;
+                            true ->
+                                ok
+                        end;
+                    true ->
+                        ok
+                end
+            end,
+            PutDataList
+            ).

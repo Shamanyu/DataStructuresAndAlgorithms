@@ -1,0 +1,218 @@
+A) Riemann
+	0) sudo apt-get install openjdk-7-jre
+	1) wget https://aphyr.com/riemann/riemann_0.2.10_all.deb
+	2) sudo dpkg -i riemann_0.2.10_all.deb
+	3) /etc/riemann/riemann.config:
+		; -*- mode: clojure; -*-
+		; vim: filetype=clojure
+		(logging/init {:file "/var/log/riemann/riemann.log"})
+		; Listen on the local interface over TCP (5555), UDP (5555), and websockets
+		; (5556)
+		(let [host "0.0.0.0"]
+		  (tcp-server {:host host})
+		  (udp-server {:host host})
+		  (ws-server  {:host host}))
+		; Expire old events from the index every 60 seconds.
+		(periodically-expire 60)
+
+		(defn send-to-influxdb [Database]
+		        (influxdb
+		                {:version :0.9
+		                 :host "127.0.0.1"
+		                 :db Database
+		                 :ports 8086
+		                }
+		        )
+		)
+		(let [index (index)]
+		  ; Inbound events will be passed to these streams:
+		  (streams
+		    (
+		        default :ttl 360
+		        (where (and (or (tagged "butler_server") (host "butler_id")) (not (= (:installation_id event) "default")))
+		                index
+		                (send-to-influxdb "GreyOrange")
+		        )
+		    )
+		  )
+		)
+	4) sudo service riemann restart
+
+B) Logstash
+	1) wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	2) echo 'deb http://packages.elasticsearch.org/logstash/2.1/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash.list
+	3) sudo apt-get update
+	4) sudo apt-get install logstash
+	5) make rubygem:
+		a) aptitude install libgemplugin-ruby	
+		b) git clone https://github.com/Shamanyu/logstash-filter-greyOrangeEmbedded.git
+		c) gem build logstash-filter-greyOrangeEmbedded.gemspec
+		d) /opt/logstash/bin/plugin install ~/logstash-filter-greyOrangeEmbedded/logstash-filter-greyOrangeEmbedded-0.1.0.gem
+	6) /etc/logstash/conf.d/config.json:
+		input
+		{
+		        beats
+		        {
+		                port => 5044
+		        }
+		}
+		filter
+		{
+		        if [type] == "log"
+		        {
+		                grok
+		                {
+		                         match => { "message" => ";;%{NUMBER:unixTime}\|%{WORD:severity}\|%{GREEDYDATA:keys}" }
+		                }
+		                greyOrangeEmbedded
+		                {
+		                }
+		        }
+		        if [type] == "filesystem"
+		        {
+		                mutate
+		                {
+		                        add_field =>
+		                        {
+		                                "host" => "butler_id"
+		                                "service" => "systeminfo"
+		                                "metric" => 4.4
+		                        }
+		                }
+		        }
+		}
+		output
+		{
+		        file
+		        {
+		                path => "/tmp/logstash.log"
+		        }
+        		riemann
+        		{
+                	map_fields => true
+        		}
+		}
+	7) sudo service logstash restart
+
+C) InfluxDB
+	1) wget http://influxdb.s3.amazonaws.com/influxdb_0.9.5.1_amd64.deb
+	2) sudo dpkg -i influxdb_0.9.5.1_amd64.deb
+	3) sudo service influxdb restart
+
+D) Grafana
+	1) wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.5.0_amd64.deb
+	2) sudo apt-get install -y adduser libfontconfig
+	3) sudo dpkg -i grafana_2.5.0_amd64.deb
+	4) /etc/apt/sources.list: deb https://packagecloud.io/grafana/stable/debian/ wheezy main
+	5) curl https://packagecloud.io/gpg.key | sudo apt-key add
+	6) sudo apt-get update
+	7) sudo apt-get install grafana
+	8) sudo service grafana-server restart
+
+E) Freeboard
+	1) git clone https://github.com/Freeboard/freeboard.git
+	2) freeboard/plugins/freeboard/gorInfluxDB.js:
+		(function()
+		{
+			freeboard.loadDatasourcePlugin({
+				"type_name"   : "influxdb",
+				"display_name": "InfluxDB",
+		        "description" : "Pick up metrics from <strong>InfluxDB</strong>",
+				"settings"    : [
+					{
+						"name"         : "refresh_time",
+						"display_name" : "Refresh Time",
+						"type"         : "text",
+						"description"  : "In milliseconds",
+						"default_value": 5000
+					}
+				],
+				newInstance   : function(settings, newInstanceCallback, updateCallback)
+				{
+					newInstanceCallback(new influxDBPlugin(settings, updateCallback));
+				}
+			});
+			var influxDBPlugin = function(settings, updateCallback)
+			{
+				var self = this;
+				var currentSettings = settings;
+				function getData()
+				{
+					var query_list = [
+										"http://192.168.3.117:8086/query?db=GreyOrange&q=select%20*%20from%20butler_status%20where%20installation_id='shamanyu'%20and%20butler_id='1'%20order%20by%20time%20desc%20limit%201",
+										"http://192.168.3.117:8086/query?db=GreyOrange&q=select%20*%20from%20butler_status%20where%20installation_id='shamanyu'%20and%20butler_id='2'%20order%20by%20time%20desc%20limit%201",
+										"http://192.168.3.117:8086/query?db=GreyOrange&q=select%20*%20from%20pps_status%20where%20installation_id='shamanyu'%20and%20pps_id='20'%20order%20by%20time%20desc%20limit%201",
+										"http://192.168.3.117:8086/query?db=GreyOrange&q=select%20*%20from%20pps_status%20where%20installation_id='shamanyu'%20and%20pps_id='10'%20order%20by%20time%20desc%20limit%201"
+									  ];
+					var number_of_queries = query_list.length;
+					var query_counter;
+					var data = {};
+					for(query_counter=0; query_counter<number_of_queries; query_counter++)
+					{
+						var xmlhttp = new XMLHttpRequest();
+						xmlhttp.open("GET", query_list[query_counter], false);
+						xmlhttp.send(null);
+						response_text = $.parseJSON(xmlhttp.responseText);
+						if(response_text.results[0].series != undefined)
+						{
+							var number_of_columns = response_text.results[0].series[0].columns.length;
+							var column_counter;
+							var series_information = {};
+							for(column_counter=0; column_counter<number_of_columns; column_counter++)
+							{
+								series_information[response_text.results[0].series[0].columns[column_counter]] = response_text.results[0].series[0].values[0][column_counter];
+							}
+							var series_counter=1;
+							while(response_text.results[0].series[0].name.concat(series_counter.toString()) in data)
+							{
+								series_counter++;
+							}	
+							data[response_text.results[0].series[0].name.concat(series_counter.toString())] = series_information;
+						}
+					}
+					updateCallback(data);
+				}
+				var refreshTimer;
+				function createRefreshTimer(interval)
+				{
+					if(refreshTimer)
+					{
+						clearInterval(refreshTimer);
+					}
+
+					refreshTimer = setInterval(function()
+					{
+						getData();
+					}, interval);
+				}
+				self.onSettingsChanged = function(newSettings)
+				{
+					currentSettings = newSettings;
+				}
+				self.updateNow = function()
+				{
+					getData();
+				}
+				self.onDispose = function()
+				{
+					clearInterval(refreshTimer);
+					refreshTimer = undefined;
+				}
+				createRefreshTimer(currentSettings.refresh_time);
+			}
+		}());
+	3) freeboard/index.html:
+		After "Load more plugins here"-
+			"plugins/freeboard/gorInfluxDB.js",
+
+
+Note:
+	1) Riemann listens on ports 5555 and 5556
+	2) Logstash listens for beats on port 5044
+	3) InfluxDB listens on ports 8086, and its dashboard is available on 8083. Credentials: root, root
+	4) Grafana's dashboard is available on port 3000. Credentials: admin, admin
+	5) Freeboard is run by double-clicking index.html
+
+Important:
+	git: repo=https://{{ git_user }}:{{ git_pwd }}@bitbucket.org/gorcode/butler_interface.git dest={{ dest }} clone=yes version={{ git_branch }}
+	/opt/influxdb/influx -execute 'CREATE DATABASE sample_database'

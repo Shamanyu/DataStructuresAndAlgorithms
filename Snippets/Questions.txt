@@ -1,0 +1,39 @@
+OS:
+Scheduling algos
+
+Networks:
+TCP UDP
+
+Database:
+Create a database for the students on campus
+
+Puzzle:
+Josephus problem
+Hat problem
+Chess
+
+LL:
+Insert a node in between
+Cycle detection
+kth from end
+
+Tree:
+LCA
+Preorder, inorder, postorder
+
+Algo:
+A* dijkstras
+Topological sort
+
+Stack:
+Bracket matching
+Queue using stacks
+
+Bit:
+Find if number power of two
+Next sparse number
+Calculate ceiling on 7n/8 without using multiplication division
+
+Linux:
+Grep
+

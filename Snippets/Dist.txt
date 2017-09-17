@@ -1,0 +1,10 @@
+rr(models).
+RackType = "12".                                           
+{ok, RackTypeRec} = racktype_rec:get_by_id(RackType). 
+RackBarcodesList =  RackTypeRec#racktype_rec.rack_barcodes.
+RackBarcode = lists:nth(1, RackBarcodesList).   
+FloorInfo = RackBarcode.                                   
+FloorId = element(1, FloorInfo). 
+Slot = lists:nth(1, element(2, FloorInfo)).  
+Y = element(1, Slot).
+lists:append(FloorId, Y). 

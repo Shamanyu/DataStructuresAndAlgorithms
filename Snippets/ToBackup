@@ -1,0 +1,7 @@
+To backup:
+1) Ansible script
+2) Riemann config
+3) Logstash config and plugin
+4) InfluxDB and Grafana password
+5) Freeboard folder
+6) Filebeat and topbeat

@@ -1,0 +1,9 @@
+#include<stdio.h>
+
+int main()
+{
+	int steps;
+	scanf("%d", &steps);
+	for(counter=0;counter<steps;counter++)
+	{
+		

@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int ***a, counter1, counter2, counter3;
+	a = (int***) malloc(sizeof(int**)*4);
+	for(counter1=0;counter1<2;counter1++)
+	{
+		a[counter1] = (int**) malloc(sizeof(int*)*2);
+		for(counter2=0;counter2<2;counter2++)
+		{
+			a[counter1][counter2]=(int*) malloc(sizeof(int));
+		}
+	}
+	for(counter1=0;counter1<4;counter1++)
+	{
+		for(counter2=0;counter2<2;counter2++)
+		{
+			for(counter3=0;counter3<2;counter3++)
+			{
+				a[counter1][counter2][counter3]=1;
+			}
+		}
+	}
+	for(counter1=0;counter1<2;counter1++)
+	{
+		for(counter2=0;counter2<2;counter2++)
+		{
+			free(a[counter1][counter2]);
+		}
+		free(a[counter1]);
+	}
+	free(a);
+	return 0;
+}
