@@ -1,15 +1,31 @@
 class UniqueChars(object):
 
     def has_unique_chars(self, string):
-        character_map = set()
-        if string != None:
-            for character in string:
-                if character in character_map:
-                    return False
-                else:
-                    character_map.add(character)
-        else:
+        if string is None:
             return False
+        character_map = set()
+        for character in string:
+            if character in character_map:
+                return False
+            else:
+                character_map.add(character)
+        return True
+
+class UniqueCharsSet(object):
+
+    def has_unique_chars(self, string):
+        if string is None:
+            return False
+        return len(set(string)) == len(string)
+
+class UniqueCharsInPlace(object):
+
+    def has_unique_chars(self, string):
+        if string is None:
+            return False
+        for char in string:
+            if string.count(char) > 1:
+                return False
         return True
 
 # %load test_unique_chars.py
@@ -23,13 +39,14 @@ class TestUniqueChars(object):
         assert_equal(func(''), True)
         assert_equal(func('foo'), False)
         assert_equal(func('bar'), True)
+        assert_equal(func('Bba'), True)
         print('Success: test_unique_chars')
 
 
 def main():
     test = TestUniqueChars()
     unique_chars = UniqueChars()
-    print (test.test_unique_chars(unique_chars.has_unique_chars))
+    test.test_unique_chars(unique_chars.has_unique_chars)
     try:
         unique_chars_set = UniqueCharsSet()
         test.test_unique_chars(unique_chars_set.has_unique_chars)
