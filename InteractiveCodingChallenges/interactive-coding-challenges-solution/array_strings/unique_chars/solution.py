@@ -1,3 +1,5 @@
+# Time complexity: O(n)
+# Space complexity: O(n)
 class UniqueChars(object):
 
     def has_unique_chars(self, string):
@@ -11,6 +13,9 @@ class UniqueChars(object):
                 character_map.add(character)
         return True
 
+
+# Time complexity: O(n)
+# Space complexity: O(n)
 class UniqueCharsSet(object):
 
     def has_unique_chars(self, string):
@@ -18,6 +23,9 @@ class UniqueCharsSet(object):
             return False
         return len(set(string)) == len(string)
 
+
+# Time complexity: O(n^2)
+# Space complexity: O(1)
 class UniqueCharsInPlace(object):
 
     def has_unique_chars(self, string):
@@ -28,10 +36,9 @@ class UniqueCharsInPlace(object):
                 return False
         return True
 
+
 # %load test_unique_chars.py
 from nose.tools import assert_equal
-
-
 class TestUniqueChars(object):
 
     def test_unique_chars(self, func):
