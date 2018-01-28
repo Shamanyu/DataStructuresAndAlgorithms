@@ -1,3 +1,4 @@
-DataStructures/Stack/__pycache__/
 *.pyc
+InteractiveCodingChallenges/interactive-coding-challenges/
 InteractiveCodingChallenges/venv3.4/
+.DS_Store
