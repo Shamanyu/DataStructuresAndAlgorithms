@@ -87,8 +87,19 @@ class LinkedList(object):
         return data
 
     def reverse_in_place(self):
-        pass
-        # TODO: Implement me
+        if self.head is None or self.head.next is None:
+            return self.head
+        previous_node = None
+        current_node = self.head
+        while (current_node is not None):
+            next_node = current_node.next
+            current_node.next = previous_node
+            previous_node = current_node
+            current_node = next_node
+        self.head = previous_node
+        return self.head
+
+
 
 
 # %load test_linked_list.py
@@ -198,7 +209,19 @@ class TestLinkedList(object):
         print('Success: test_len\n')
 
     def test_reverse_in_place(self):
-        pass
+        print ('Test: reverse on an empty list')
+        linked_list = LinkedList(None)
+        linked_list.reverse_in_place()
+        assert_equal(linked_list.get_all_data(), [])
+
+        print ('Test: reverse general case')
+        head = Node(10)
+        linked_list = LinkedList(head)
+        linked_list.insert_to_front('a')
+        linked_list.insert_to_front('bc')
+        linked_list.insert_to_front(-1)
+        linked_list.reverse_in_place()
+        assert_equal(linked_list.get_all_data(), [10, 'a', 'bc', -1])
 
 
 def main():
