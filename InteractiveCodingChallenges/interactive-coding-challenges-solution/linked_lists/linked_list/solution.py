@@ -1,47 +1,90 @@
 class Node(object):
 
     def __init__(self, data, next_node=None):
-        pass
-        # TODO: Implement me
+        self.data = data
+        self.next = next_node
 
     def __str__(self):
-        pass
-        # TODO: Implement me
+        return self.data
 
 
 class LinkedList(object):
 
     def __init__(self, head=None):
-        pass
-        # TODO: Implement me
+        self.head = head
 
     def __len__(self):
-        pass
-        # TODO: Implement me
+        if self.head is None:
+            return 0
+        current_node = self.head
+        length = 0
+        while (current_node is not None):
+            length += 1
+            current_node = current_node.next
+        return length
 
     def insert_to_front(self, data):
-        pass
-        # TODO: Implement me
+        if data is None:
+            return None
+        node = Node(data, self.head)
+        self.head = node
+        return node
 
     def append(self, data):
-        pass
-        # TODO: Implement me
+        if data is None:
+            return None
+        node = Node(data)
+        if self.head is None:
+            self.head = node
+            return node
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+        curr_node.next = node
+        return node
 
     def find(self, data):
-        pass
-        # TODO: Implement me
+        if self.head is None or data is None:
+            return None
+        current_node = self.head
+        while (current_node is not None):
+            if current_node.data == data:
+                return current_node
+            current_node = current_node.next
+        return None
 
     def delete(self, data):
-        pass
-        # TODO: Implement me
+        if data is None:
+            return
+        if self.head is None:
+            return
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        prev_node = self.head
+        curr_node = self.head.next
+        while curr_node is not None:
+            if curr_node.data == data:
+                prev_node.next = curr_node.next
+                return
+            prev_node = curr_node
+            curr_node = curr_node.next
 
     def print_list(self):
-        pass
-        # TODO: Implement me
+        if self.head is None:
+            return
+        current_node = self.head
+        while (current_node is not None):
+            print (current_node.data)
+            current_node = current_node.next
 
     def get_all_data(self):
-        pass
-        # TODO: Implement me
+        data = list()
+        curr_node = self.head
+        while curr_node is not None:
+            data.append(curr_node.data)
+            curr_node = curr_node.next
+        return data
 
     def reverse_in_place(self):
         pass
