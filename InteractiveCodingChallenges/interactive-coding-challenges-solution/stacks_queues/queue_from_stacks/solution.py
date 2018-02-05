@@ -1,19 +1,23 @@
 from stack import Node, Stack
 
+# Space complexity: O(n)
 class QueueFromStacks(object):
 
     def __init__(self):
         self.primary_stack = Stack()
         self.auxiliary_stack = Stack()
 
+    # Time complexity: O(n)
     def shift_stacks(self, source, destination):
         while not source.is_empty():
             data = source.pop()
             destination.push(data)
 
+    # Time complexity: O(1)
     def enqueue(self, data):
         self.primary_stack.push(data)
 
+    # Time complexity: O(n)
     def dequeue(self):
         self.shift_stacks(self.primary_stack, self.auxiliary_stack)
         return self.auxiliary_stack.pop()
