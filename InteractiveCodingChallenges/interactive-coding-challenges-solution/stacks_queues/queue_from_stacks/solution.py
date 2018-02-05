@@ -1,20 +1,23 @@
+from stack import Node, Stack
+
 class QueueFromStacks(object):
 
     def __init__(self):
-        # TODO: Implement me
-        pass
+        self.primary_stack = Stack()
+        self.auxiliary_stack = Stack()
 
     def shift_stacks(self, source, destination):
-        # TODO: Implement me
-        pass
+        while not source.is_empty():
+            data = source.pop()
+            destination.push(data)
 
     def enqueue(self, data):
-        # TODO: Implement me
-        pass
+        self.primary_stack.push(data)
 
     def dequeue(self):
-        # TODO: Implement me
-        pass
+        self.shift_stacks(self.primary_stack, self.auxiliary_stack)
+        return self.auxiliary_stack.pop()
+        self.shift_stacks(self.auxiliary_stack, self.primary_stack)
 
 
 # %load test_queue_from_stacks.py
