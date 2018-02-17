@@ -2,6 +2,8 @@ from BST import Node, Bst
 
 class Solution(Bst):
 
+    # Time complexity: O(h); where h is height of tree
+    # Space complexity: O(h); where h is height of tree
     def find_second_largest(self):
         if self.root is None:
             raise TypeError
@@ -13,6 +15,8 @@ class Solution(Bst):
         else:
             return self.find_largest(node.left)
 
+    # Time complexity: O(h); where h is height of tree
+    # Space complexity: O(h); where h is height of tree
     def find_largest(self, node):
         largest_node = node
         while (largest_node.right is not None):
