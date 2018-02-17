@@ -2,6 +2,8 @@ from BST import Node, Bst
 
 class BstSuccessor(object):
 
+    # Time complexity: O(h); h is tree height
+    # Space complexity: O(h); h is tree height
     def get_next(self, node):
         if node is None:
             raise Exception
@@ -11,6 +13,8 @@ class BstSuccessor(object):
             return self.find_parent_successor_data(node, node.parent)
         return None
 
+    # Time complexity: O(h); h is tree height
+    # Space complexity: O(h); h is tree height
     def find_left_most_leaf_data(self, node):
         left_most_leaf = node
         while (node.left is not None):
@@ -18,6 +22,8 @@ class BstSuccessor(object):
             node = node.left
         return left_most_leaf.data
 
+    # Time complexity: O(h); h is tree height
+    # Space complexity: O(h); h is tree height
     def find_parent_successor_data(self, child_node, parent_node):
         if parent_node.left == child_node:
             return parent_node.data
