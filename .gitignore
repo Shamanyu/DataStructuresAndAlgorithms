@@ -1,4 +1,5 @@
 *.pyc
 InteractiveCodingChallenges/interactive-coding-challenges/
 InteractiveCodingChallenges/venv3.4/
+LeetCode/venv/
 .DS_Store
