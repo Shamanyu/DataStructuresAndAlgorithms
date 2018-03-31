@@ -1,6 +1,8 @@
 class MinCostStairs(object):
 
   def minCostStairs(self, cost):
+    if len(cost) == 1:
+        return cost[0]
     cost.insert(0, 0)
     self.minCostTable = [None for stairCost in cost]
     return self._minCostStairs(cost, 0)
@@ -18,6 +20,8 @@ class TestMinCostStairs(object):
 
   def testMinCostStairs(self):
     minCostStairs = MinCostStairs()
+
+    assert_equals(minCostStairs.minCostStairs([1]), 1)
 
     assert_equals(minCostStairs.minCostStairs([10, 15, 20]), 15)
 
