@@ -1,0 +1,13 @@
+abcba
+abdba
+abcab
+abcdefedbca
+ ccc 
+ccccc
+\abc\a
+ddcdd
+-1
+0
+ 
+a1b1a
+aaaabbbbccccccccbbbbaaaa

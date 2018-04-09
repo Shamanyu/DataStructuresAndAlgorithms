@@ -1,0 +1,22 @@
+using System;
+namespace TrailingZeros
+{
+    class TrailingZerosClass
+    {
+        static void Main() 
+        {
+            int number = Convert.ToInt32(Console.ReadLine());
+            int trailing_zeros=0;
+            int divider=5;
+            int adder=number/divider;
+            while(adder>0)
+            {
+            	trailing_zeros+=adder;
+            	divider*=5;
+            	adder=number/divider;
+            }
+            Console.WriteLine(trailing_zeros);
+        }
+    }
+}
+

@@ -1,0 +1,18 @@
+print 17
+print "abcba"
+print "abdba"
+print "abcab"
+print "abcdefedbca"
+print " ccc "
+print "ccccc"
+print "\abc\a"
+print "ddcdd"
+print "-1"
+print "0"
+print " "
+print ""
+print "aaeeddaaaabbbbccccccccbbbbaaaaddeeaa"    
+print "DDDDBBBBDDDD"         
+print "EEEEAAAAEEEE"
+print "979897"
+             
