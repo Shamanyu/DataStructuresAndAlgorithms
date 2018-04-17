@@ -4,6 +4,8 @@
 import queue
 import threading
 import time
+import random
+import string
 
 exitFlag = 0
 queueLock = threading.Lock()
@@ -23,7 +25,8 @@ class WorkQueue(object):
     def next(self):
         if self.tasksCreated < self.taskLimit:
             self.tasksCreated += 1
-            return 'Shubham'
+            return ''.join(random.choice(string.ascii_uppercase + string.digits) \
+                for _ in range(10))
         else:
             raise StopIteration()
 
@@ -54,15 +57,16 @@ def processData(threadName, taskQueue):
             # work = next(taskQueue)
             work = taskQueue.getWork()
             queueLock.release()
-            print (threadName + " working on task ", work)
+            print (threadName + " modified ", work, " to create ", ''.join(list(reversed(work))))
         else:
             queueLock.release()
+        # time.sleep(1)
 
 class Rizort2Redo(object):
 
     def rizort2Redo(self):
 
-        workQueue = WorkQueue(5)
+        workQueue = WorkQueue(500)
 
         consumerThreadList = ["Thread-1", "Thread-2", "Thread-3", "Thread-4", "Thread-5"]
         consumerThreads = list()
