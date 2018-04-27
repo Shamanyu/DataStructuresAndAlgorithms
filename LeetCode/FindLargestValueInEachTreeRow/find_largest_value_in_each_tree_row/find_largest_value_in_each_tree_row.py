@@ -9,6 +9,8 @@ class TreeNode(object):
 class FindLargestValueInEachTreeRow(object):
 
     def largestValues(self, root):
+        if not root:
+            return []
         queue = [root]
         result = list()
         while queue:
@@ -27,6 +29,10 @@ class TestFindLargestValueInEachTreeRow(object):
 
   def testFindLargestValueInEachTreeRow(self):
     findLargestValueInEachTreeRow = FindLargestValueInEachTreeRow()
+
+    nodeA_A = None
+
+    assert_equals(findLargestValueInEachTreeRow.largestValues(nodeA_A), [])
 
     node0_0 = TreeNode(1)
 
