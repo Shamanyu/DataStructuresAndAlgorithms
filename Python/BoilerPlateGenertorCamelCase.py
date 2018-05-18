@@ -22,11 +22,11 @@ class %s(object):
 
 
 def main():
-  %s = %s()
-  %s.%s()
+    %s = %s()
+    %s.%s()
 
 if __name__ == '__main__':
-  main()
+    main()
     """
     return boilerPlateCode
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     testClassName = 'Test'+className
     testClassMethod = 'test'+classMethod[0].upper()+classMethod[1:]
     boilerPlateCode = self.getBoilerPlateCode()
-    print (boilerPlateCode % (className, classMethod, 
+    print (boilerPlateCode % (className, classMethod,
       testClassName, testClassMethod, classMethod, className,
       testClassMethod, testClassName, testClassMethod, testClassMethod))
 
