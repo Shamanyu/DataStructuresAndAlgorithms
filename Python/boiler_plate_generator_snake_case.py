@@ -38,6 +38,7 @@ if __name__ == '__main__':
     for counter in range(1, class_name_length):
       class_name += ('_' + str(raw_json_data["className"][counter]))
       class_method += ('_' + str(raw_json_data["className"][counter]))
+    class_method += '_instance'
     test_class_name = 'test_'+class_name
     test_class_method = 'test_'+class_method
     boiler_plate_code = self.get_boiler_plate_code()
